@@ -8,7 +8,14 @@ const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
 
   const clickHandler = () => {
-    setTitle("updated");
+    const clickedDate = new Date();
+
+    setTitle(
+      "updated at " +
+        clickedDate.getMinutes().toString() +
+        ":" +
+        clickedDate.getSeconds().toString()
+    );
     console.log("Button has been clicked! New title: " + title);
   };
 
